@@ -1,0 +1,121 @@
+L= [11,12,13,14]
+print "The defined list is : " , L
+print "The length of the list is :  " , len(L)
+L.append(50)
+print "List after adding the element 50 = " ,L
+L.append(60) 
+print "List after adding element 60 = " , L
+
+print "..................................... \n \n Now we are asked to del the elements 11 and 13 from the list \n \n  " 
+
+print "-------------- "
+
+print "First we search the index of the elements 11 and 13 " 
+
+
+for i in range(0,len(L)):
+    if L[i]==11 :
+        index11=i
+        print "Index of the element 11 is = " , index11 
+    
+del L[index11]
+
+print "The list we get is = " , L
+
+for i in range(0,len(L)):
+    if L[i]==13 :
+        index13=i
+        print "Index of the element 13 is = " , index13
+
+del L[index13]
+print "The list now = " , L  
+
+print "\n\n __________________________________\n\n  "
+
+print "Our aim is to sort the list in descending order\n\n"
+
+    
+
+L.sort(reverse =True)
+print "After sort the list is = " ,L 
+
+print "\n\n ________________ \n\n Now our aim is to sort the list in ascending order\n\n"
+
+L.sort()
+
+print "After sort the list that we get = " , L
+
+print "Setting the elements of the list again............ \n"
+L.append(11)
+L.append(13)
+L.sort()
+print "LIST : " , L 
+print "\n\n ((((((( .......Searching 13........ ))))))\n\n "
+for i in range(0,len(L)):
+    if L[i]==13:
+        print "Index of the element 13 : ", i
+
+#CALCULATE THE NUMBER OF ELEMENTS PRESENT IN THE LIST 
+print "\n\nThe number of elements present in the list : " , len(L)
+
+
+#SUM OF ALL ELEMENTS IN THE LIST
+sum1=0 
+for i in range(0,len(L)):
+    sum1=sum1+L[i]
+
+
+
+
+print " \n\n Sum of all elements in the list ,", L , " =  " , sum1
+print "sum using sum function = " , sum(L) 
+
+print "\n\nOur next aim is to find sum of all odd numbers in the list "
+print "\t - - - - - - - - - - - - - - - - - - \t"
+
+sum_odd=0
+for i in range(0,len(L)):
+    if (L[i]%2 != 0 ):
+        sum_odd=sum_odd+L[i]
+print "Sum of all odd elememts in our list : " , sum_odd 
+     
+print "\t - - - - - - - - - - - - - - - - - - \t"
+print "\n\nNow we have to find sum of all even numbers in the list "
+print "\t - - - - - - - - - - - - - - - - - - \t"
+
+sum_even=0
+for i in range(0,len(L)):
+    if (L[i]%2 == 0 ):
+        sum_even=sum_even+L[i]
+print "Sum of all odd elememts in our list : " , sum_even
+
+print("\t- - - - - - - - - \t")
+print "\n\n Sum of all prime no.'s in the list : " 
+sum_prime=0
+
+for j in range (0,len(L)):
+    f=0
+    for i in range(2,L[j]/2+1):
+        if (L[j] %i ==0 ):
+            f=1 
+            break
+    if f==0 :
+        sum_prime=sum_prime+L[j]
+print "sum of prime numbers in the list " , L ," : " , sum_prime
+
+
+print "DELETING ALL ELEMENTS OF LIST L"
+n=len(L)-1
+while L!=[] :
+    del L[n]
+    n=n-1    
+
+print " -------- \nThe list now be = " , L , "\n ----------- \n "
+
+print "\n ------ \n DELETING THE LIST ITSELF \n \n "
+del L
+try:
+    
+    print L
+except:
+    print "----- \n NO SUCH LIST EXISTS!!!!! \n --------"
